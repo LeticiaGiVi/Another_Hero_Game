@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     }
     private void Move()
     {
-        rb.velocity = motionVector * speed;
+        rb.linearVelocity = motionVector * speed;
     }
 
 }
