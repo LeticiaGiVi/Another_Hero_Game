@@ -172,7 +172,6 @@ ScriptedImporter:
     cells:
     - name: stunt_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 2
@@ -181,7 +180,6 @@ ScriptedImporter:
       spriteId: a02157b10c86c20419df85a06bb40b87
     - name: stunt_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 2

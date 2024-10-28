@@ -1,29 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float horizontal;
-    private bool isFacingRight = true;
-    private Animator animator;
+    [SerializeField] float speed = 2f;
+    Vector2 motionVector;
+
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();    
+       
     }
-    void Update()
+    private void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        Debug.Log(horizontal);
+        motionVector = new Vector2(Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical"));
+    }
+    void FixedUpdate()
+    {
+        Move();
 
-        this.rb.velocity = new Vector2(horizontal *8f, this.rb.velocity.y);
-
-        animator.SetFloat("speed",Mathf.Abs(horizontal));
-
+    }
+    private void Move()
+    {
+        rb.velocity = motionVector * speed;
     }
 
 }
