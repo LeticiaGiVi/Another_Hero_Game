@@ -21,9 +21,10 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        motionVector = new Vector2
-            (Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical"));
+        motionVector = new Vector2(
+            Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical")
+            );
         animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
     }
